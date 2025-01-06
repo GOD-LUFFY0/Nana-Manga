@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>New manga</title>
+   <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <h1> More upcoming shortly</h1>
+        <div class="items">
+            <div class="item">
+                <img src="/images/wallpaperflare.com_wallpaper (1).jpg" alt="Item 1" onclick="openModal('item1')">
+                <div class="item-details">
+                    <h3>GOD OF HIGHSCHOOL</h3>
+                    <p>More episodes incoming</p>
+                    <p><a href="/GOH"> Read more</p></a>
+                </div>
+            </div>
+            <div class="item">
+                <img src="/images/wallpaperflare.com_wallpaper.jpg " alt="Item 2" onclick="openModal('item2')">
+                <div class="item-details">
+                    <h3>DEMON SLAYER</h3>
+                    <p>More episodes incoming</p>
+                    <p><a href="/DS"> Read more</p></a>
+                </div>
+            </div>
+            <!-- Item 3 -->
+            <div class="item">
+                <img src="/images/IMG_20250106_131042_743.jpg" alt="Item 3" onclick="openModal('item3')">
+                <div class="item-details">
+                    <h3>PERFECT WORLD</h3>
+                    <p>More episodes incoming</p>
+                    <p><a href="/PW"> Read more</p></a>
+                </div>
+            </div>
+            <!-- Item 4 -->
+            <div class="item">
+                <img src="/images/Bleach Wallpaper.jpeg" alt="Item 4" onclick="openModal('item4')">
+                <div class="item-details">
+                    <h3>BLEACH</h3>
+                    <p>More episodes incoming</p>
+                    <p><a href="/BLEACH"> Read more</p></a>
+                </div>
+            </div>
+    </div>
+        <div class="modal" id="modal">
+        <div class="modal-content" id="modalContent">
+            <span class="close" onclick="closeModal()">&times;</span>
+            <img id="modalImage" src="" alt="">
+            <div id="modalDetails">
+                <h3 id="modalTitle"></h3>
+                <p id="modalPrice"></p>
+                <p id="modalDescription"></p>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        function openModal(itemId) {
+            // Data for items
+            const items = {
+                item1: {
+                    img: '/images/wallpaperflare.com_wallpaper (1).jpg',
+                    title: 'GOD OF HIGHSCHOOL',
+                    price: '',
+                    description: ''
+                },
+                item2: {
+                    img: '/images/wallpaperflare.com_wallpaper.jpg ',
+                    title: 'DEMON SLAYER ',
+                    price: '',
+                    description: '  '
+                },
+                item3: {
+                    img: '/images/IMG_20250106_131042_743.jpg',
+                    title: 'PERFECT WORLD',
+                    price: '',
+                    description: ' Born into a unique world where,the main character, Shi Hao, is a genius blessed by the heavens.His journey will bring him through unknown lands until he is able to become a person that can truly shake the world.'
+                },
+                item4: {
+                    img: '/images/Bleach Wallpaper.jpeg',
+                    title: 'BLEACH',
+                    price: '',
+                    description: '  '
+                },
+              
+            };
+
+            // Set modal content based on clicked item
+            const item = items[itemId];
+            document.getElementById('modalImage').src = item.img;
+            document.getElementById('modalTitle').innerText = item.title;
+            document.getElementById('modalPrice').innerText = item.price;
+            document.getElementById('modalDescription').innerText = item.description;
+
+            // Show modal
+            document.getElementById('modal').style.display = 'flex';
+        }
+
+        function closeModal() {
+            document.getElementById('modal').style.display = 'none';
+        }
+    </script>
+
+</body>
+</html>
